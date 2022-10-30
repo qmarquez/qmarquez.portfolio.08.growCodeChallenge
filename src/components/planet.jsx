@@ -1,4 +1,4 @@
-import { Avatar, Card, CardContent, CardHeader, CircularProgress } from '@mui/material';
+import { Avatar, Card, CardContent, CardHeader } from '@mui/material';
 import React from 'react';
 
 export default function Planet({ planet: { name, gravity, terrain, population } }) {
