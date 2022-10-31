@@ -1,6 +1,7 @@
 import { types } from "mobx-state-tree";
 
 const Planet = types.model({
+  id: types.optional(types.integer, 0),
   name: types.string,
   diameter: types.string,
   rotation_period: types.string,

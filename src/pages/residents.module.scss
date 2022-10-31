@@ -1,0 +1,12 @@
+h1,
+h2 {
+  text-align: center;
+}
+
+.residentsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 7px;
+}
