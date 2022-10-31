@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Loading from '../components/loading.jsx';
+import SWAPIBreadcrumbs from '../components/SWAPIbreadcrumbs.jsx';
 import { getPlanetByUrl } from '../service/planet.service.js';
 import { getResidentById } from '../service/resident.service.js';
+import routes from '../utils/routes.js';
 import styles from './resident.module.scss';
 
 export default function Resident() {
-  const { residentId } = useParams();
+  const { residentId, planetId } = useParams();
   const [resident, setResident] = useState();
 
   useEffect(() => {
@@ -22,6 +24,16 @@ export default function Resident() {
   }, [resident, residentId]);
 
   return <>
+    <SWAPIBreadcrumbs crumbs={[
+      {
+        url: routes.allResidents.buildPath(planetId),
+        label: `${resident?.homeworldName}`
+      },
+      {
+        url: routes.resident.buildPath(planetId, residentId),
+        label: `${resident?.name}`
+      }
+    ]} />
     {!resident
       ? <Loading entity='resident' />
       : <div>

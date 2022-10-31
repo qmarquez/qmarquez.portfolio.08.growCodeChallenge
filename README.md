@@ -16,8 +16,8 @@ Alright on to the fun part 🎉🎉
 - [x] Add a text input at the top of the page that allows a user to search the full list of planets. The filtering should NOT re-call any api calls.
 - [x] When a user clicks on a planet, they should navigate to a new page that shows a list of the residents of the planet fetched from the Star Wars API.
 - [x] When a user clicks on one of the residents, they should navigate to another page that shows the personal details of that resident.
-- [ ] Include a header with breadcrumbs. Something like `All Planets / Planet Name / Resident Name`. Each breadcrumb section should be clickable to navigate to the appropriate page.
-- [ ] Include a service file that contains all the api urls and gets. Your React components should not contain any url references.
+- [x] Include a header with breadcrumbs. Something like `All Planets / Planet Name / Resident Name`. Each breadcrumb section should be clickable to navigate to the appropriate page.
+- [x] Include a service file that contains all the api urls and gets. Your React components should not contain any url references.
 
 ## Tips to get started.
 - Use something like [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app) to give yourself a jump start. We don't want to put you through wrestling with standing up a webpack/babel setup on your own. Unless you are a real glutton for punishment. In which case, go for it. But it's not going to score you extra points.
@@ -27,9 +27,9 @@ Speaking of extra points...
 
 ## Bonus Points
 - Every company does things a little differently. The closer you get to our stack the better we'll be able to assess how you work with it. So, extra credit if you use any of the following:
-  - [ ] [Mobx](https://mobx.js.org) and [Mobx State Tree](https://mobx-state-tree.js.org) for state management.
-  - [X] [Sass](https://sass-lang.com/) for styling.
-  - [X] [React Router](https://reacttraining.com/react-router/) for routing.
+  - [x] [Mobx](https://mobx.js.org) and [Mobx State Tree](https://mobx-state-tree.js.org) for state management.
+  - [x] [Sass](https://sass-lang.com/) for styling.
+  - [x] [React Router](https://reacttraining.com/react-router/) for routing.
 - Optimizing
   - various features are as fast as possible.
   - Re-use of components

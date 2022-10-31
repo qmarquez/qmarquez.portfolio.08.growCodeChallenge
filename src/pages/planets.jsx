@@ -4,12 +4,15 @@ import { observer } from 'mobx-react-lite';
 import React, { useState } from 'react';
 import Loading from '../components/loading.jsx';
 import PlanetCard from '../components/planetCard.jsx';
+import SWAPIBreadcrumbs from '../components/SWAPIbreadcrumbs.jsx';
 import styles from './planets.module.scss';
 
 const Planets = observer(props => {
   const [search, setSearch] = useState('');
 
   return <>
+    <SWAPIBreadcrumbs/>
+
     <h1 className={styles.title}>
       STAR WARS PLANETS!
     </h1>

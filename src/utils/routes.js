@@ -1,7 +1,10 @@
 export default {
+  allPlanets: {
+    path: '/'
+  },
   allResidents: {
-    path: '/:planetId/resident/all',
-    buildPath: (planetId) => `/${planetId}/resident/all`
+    path: '/:planetId/residents',
+    buildPath: (planetId) => `/${planetId}/residents`
   },
   resident: {
     path: '/:planetId/resident/:residentId',

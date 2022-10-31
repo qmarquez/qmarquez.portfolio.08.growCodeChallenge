@@ -6,6 +6,8 @@ import styles from './residents.module.scss'
 import Loading from '../components/loading.jsx';
 import { values } from 'mobx';
 import ResidentCard from '../components/residentCard.jsx';
+import routes from '../utils/routes.js';
+import SWAPIBreadcrumbs from '../components/SWAPIbreadcrumbs.jsx';
 
 const Residents = observer(props => {
   const { planetId } = useParams();
@@ -33,6 +35,12 @@ const Residents = observer(props => {
   }
 
   return <>
+    <SWAPIBreadcrumbs crumbs={[
+      {
+        url: routes.allResidents.buildPath(planetId),
+        label: `${props.store.planets[planetId].name}`
+      }
+    ]} />
     <h1 className={styles.centeredTitle}>Want to discover who is in {props.store.planets[planetId].name}?</h1>
     <h2 className={styles.centeredTitle}>Let's go for it!</h2>
 

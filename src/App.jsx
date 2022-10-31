@@ -19,11 +19,9 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
       <div>
         <Routes>
-          <Route index element={<Planets store={store} />} />
+          <Route path={routes.allPlanets.path} element={<Planets store={store} />} />
           <Route path={routes.allResidents.path} element={<Residents store={store} />} />
           <Route path={routes.resident.path} element={<Resident store={store} />} />
         </Routes>
