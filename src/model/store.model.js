@@ -3,7 +3,7 @@ import Planet from "./planet.model.js";
 
 const RootStore = types.model({
   planets: types.array(Planet),
-  fetchingPlanets: false
+  fetchingPlanets: false,
 }).actions(
   self => ({
     setFetchingPlanets(value) {
@@ -21,7 +21,7 @@ const RootStore = types.model({
     },
     clearPlanets() {
       self.planets.clear();
-    }
+    },
   })
 );
 

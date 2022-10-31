@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { observer } from 'mobx-react-lite';
 import { useParams } from 'react-router-dom';
-import { getResident } from '../service/resident.service.js';
+import { getResidentByUrl } from '../service/resident.service.js';
 import styles from './residents.module.scss'
 import Loading from '../components/loading.jsx';
 import { values } from 'mobx';
@@ -23,7 +23,7 @@ const Residents = observer(props => {
   useEffect(() => {
     if (!residentsFetched && residents.length) {
       setResidentsFetched(true);
-      const requests = residents.map(getResident);
+      const requests = residents.map(getResidentByUrl);
       Promise.all(requests).then(setPlanetResidents);
     }
   }, [residents, residentsFetched]);
@@ -38,16 +38,12 @@ const Residents = observer(props => {
 
     {
       !planetResidents.length
-        ? <Loading entity='residents' />
+        ? (!residentsFetched ? <h3>No residents to fetch</h3> : <Loading entity='residents' />)
         : <div className={styles.residentsContainer}>
-          {
-            planetResidents
-              .map((resident, i) => <ResidentCard key={i} resident={resident} planetId={planetId} />)
-          }
+          {planetResidents.map((resident, i) => <ResidentCard key={i} resident={resident} planetId={planetId} />)}
         </div>
     }
   </>
-}
-);
+});
 
 export default Residents;

@@ -2,7 +2,7 @@ import axios from "axios";
 import store from "../model/store.model.js";
 
 export async function getPlanets() {
-  const { REACT_APP_SWAPI_URL, REACT_APP_PLANETS_API } = process.env
+  const { REACT_APP_SWAPI_URL, REACT_APP_PLANETS_API } = process.env;
   let url = REACT_APP_SWAPI_URL.concat(REACT_APP_PLANETS_API);
 
   const planets = [];
@@ -18,4 +18,9 @@ export async function getPlanets() {
   }
 
   store.addPlanets(planets);
+}
+
+export async function getPlanetByUrl(url) {
+  const { data } = await axios.get(url);
+  return data;
 }
